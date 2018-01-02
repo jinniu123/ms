@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: ms-config
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zhangxd1989/spring-boot-cloud
+          search-paths: config-repo
+  rabbitmq:
+    host: rabbitmq
+
+security:
+  user:
+    name: user
+    password: ${CONFIG_SERVER_PASSWORD:password}
